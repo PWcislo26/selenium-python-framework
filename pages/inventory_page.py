@@ -33,6 +33,3 @@ class InventoryPage(BasePage):
         super()._click(self.LOGOUT_BUTTON)
 
 
-
-
-

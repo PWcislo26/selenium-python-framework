@@ -23,4 +23,3 @@ def driver(request):
         raise TypeError(f"Expected 'chrome' or 'firefox', but got {browser}")
     yield my_driver
     my_driver.quit()
-
