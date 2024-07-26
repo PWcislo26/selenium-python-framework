@@ -24,7 +24,6 @@ class TestInventoryPage:
         assert inventory_page._get_text(inventory_page.SHOPPING_CART_COUNTER) == "1", "Counter has not been set to 1"
 
     @pytest.mark.inventory
-    @pytest.mark.buy
     def test_buy_product(self, driver):
         login_page = LoginPage(driver)
         login_page.open()
