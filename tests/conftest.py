@@ -7,7 +7,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
 
 
-@pytest.fixture(params=["chrome"])
+@pytest.fixture(params=["chrome", "firefox"])
 def driver(request):
 
     options = Options()
