@@ -38,5 +38,5 @@ class TestInventoryPage:
         checkout_overview_page = CheckoutOverviewPage(driver)
         checkout_overview_page.finsh_checkout()
         checkout_complete_page = CheckoutCompletePage(driver)
-        assert checkout_complete_page.URL == checkout_complete_page.current_url
-        assert checkout_complete_page.checkout_complete()
+        assert checkout_complete_page.URL == checkout_complete_page.current_url, "ULR different than expected"
+        assert checkout_complete_page.checkout_complete(), "Successful checkout message is not present"

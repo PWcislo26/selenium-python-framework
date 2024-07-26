@@ -33,7 +33,7 @@ class TestLoginPage:
         login_page.login(login_page.USERNAME_POSITIVE, login_page.PASSWORD_POSITIVE)
         inventory_page = InventoryPage(driver)
         inventory_page.logout()
-        assert login_page.URL == inventory_page.current_url
+        assert login_page.URL == inventory_page.current_url, "URL different than expected"
 
 
 
