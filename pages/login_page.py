@@ -10,10 +10,6 @@ class LoginPage(BasePage):
     PASSWORD_FIELD: tuple = (By.ID, "password")
     LOGIN_BUTTON: tuple = (By.ID, "login-button")
     ERROR_FIELD: tuple = (By.CSS_SELECTOR, "h3")
-    USERNAME_POSITIVE: str = "standard_user"
-    USERNAME_LOCKEDOUT: str = "locked_out_user"
-    PASSWORD_POSITIVE: str = "secret_sauce"
-    PASSWORD_NEGATIVE: str = "wrong_password"
 
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
