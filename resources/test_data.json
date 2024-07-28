@@ -1,0 +1,13 @@
+{
+  "login": {
+    "username_standard": "standard_user",
+    "password_correct": "secret_sauce",
+    "username_lockedout": "locked_out_user",
+    "password_incorrect": "wrong_password"
+  },
+  "checkout_user": {
+    "first_name": "test_name",
+    "last_name": "test_lastname",
+    "postal_code": "11-111"
+  }
+}
