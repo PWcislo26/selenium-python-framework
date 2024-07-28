@@ -12,6 +12,8 @@ Short description of main directories and their content
 - [pages](pages) - set of class based objects that represent each page, containing methods used in tests.
 - [tests](tests) - set of tests for page functionalities.
 - [reports](reports) - an example pytest report in .html that is generated for each run of tests.
+- [utils](utils) - utility code complementing the implementation of tests.
+- [resources](resources) - data used in tests execution e.g. first name, last name, postal code.
 
 ## Project features
 - framework follows page object pattern
