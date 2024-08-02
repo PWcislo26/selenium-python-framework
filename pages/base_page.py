@@ -32,6 +32,10 @@ class BasePage:
         self._wait_unit_element_is_visible(locator, time)
         return self._find(locator).text
 
+    def _get_attribute(self, locator: tuple, attribute_name: str, time: int = 10) -> str:
+        self._wait_unit_element_is_visible(locator, time)
+        return self._find(locator).get_attribute(attribute_name)
+
     def _wait_unit_element_is_visible(self, locator: tuple, time: int = 10):
         wait = WebDriverWait(self._driver, time)
         wait.until(ec.visibility_of_element_located(locator))
