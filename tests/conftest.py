@@ -1,23 +1,26 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver import ChromeOptions, FirefoxOptions
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 @pytest.fixture(params=["chrome", "firefox"])
 def driver(request):
 
-    chrome_options = ChromeOptions()
-    chrome_options.add_argument("--headless=new")
-    firefox_options = FirefoxOptions()
-    firefox_options.add_argument("--headless")
     browser = request.param
     if browser == "chrome":
-        my_driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        chrome_options = ChromeOptions()
+        chrome_options.add_argument("--headless=new")
+        chrome_options.add_argument("--enable-javascript")
+        service = ChromeService(ChromeDriverManager().install())
+        my_driver = webdriver.Chrome(service=service, options=chrome_options)
     elif browser == "firefox":
+        firefox_options = FirefoxOptions()
+        firefox_options.add_argument("--headless")
         my_driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
     else:
         raise TypeError(f"Expected 'chrome' or 'firefox', but got {browser}")
