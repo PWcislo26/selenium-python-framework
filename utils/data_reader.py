@@ -5,7 +5,7 @@ import os
 class DataReader:
     def __init__(self):
         # Load JSON configuration
-        with open('./resources/test_data.json', 'r') as config_file:
+        with open(r'./resources/test_data.json', 'r') as config_file:
             self.test_data = json.load(config_file)
 
     @property
